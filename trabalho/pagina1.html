@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        GL ARTLIV
+    </header>
+<div class="container">
+    <h1>LOGIN</h1>
+    <p id="mensagem">Digite usuário e senha.</p>
+    <input type="text" id="nome" placeholder="Usuário"><br><br>
+    <input type="password" id="senha" placeholder="Senha"><br><br>
+    <button onclick="verificarPalavra()">Verificar</button>
+</div>
+    <script>
+    function verificarPalavra() {
+    const nomes = [{nome:"Lilian", senha:123}, {nome:"Gabriela", senha:1234}, {nome:"André", senha:12345} ];
+    const usuario  = document.getElementById("nome").value;
+    const password = document.getElementById("senha").value;
+    const mensagem = document.getElementById("mensagem");
+    const Original = "Digite usuário e senha.";
+    let encontrado = false;
+    for( let  i=0;  i < nomes.length;  i++){
+        if(usuario == nomes[i].nome && password == nomes[i].senha ){
+            encontrado = true;
+            setTimeout(() => {
+         mensagem.innerHTML = "Redirecionando...";
+        window.location.href ="pagina2.html";
+    },3000);
+}
+    }
+    if(!encontrado){
+        setTimeout(() => {
+        mensagem.innerHTML = "Login ou senha incorretos,tente novamente.";
+        //Limpa os campos logo ao clicar
+        document.getElementById("nome").value = "";
+        document.getElementById("senha").value = "";
+                },2000);
+            }
+        }
+        </script>
+   
+</body>
+</html>

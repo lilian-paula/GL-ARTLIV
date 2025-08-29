@@ -1,0 +1,62 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(71, 68, 68);
+    margin: 50px; /* Adiciona uma margem de 50 pixels ao redor do corpo da página */
+    margin-left: 550px;
+    margin-top: 200px;
+    padding: auto;
+    display: flex; * Utiliza o Flexbox para centralizar o conteúdo */
+    justify-content: center;
+    unicode-bidi: isolate;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: rgb(12, 12, 12);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+input {
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container {
+    text-align: center;
+    background-color:rgb(134, 127, 127);
+    padding: 30px; /* Adiciona um preenchimento de 30 pixels ao redor do conteúdo do container */
+    border-radius: 10px; /* Arredonda os cantos do container */
+    display: block;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    
+}
+
+button {
+    background-color: rgb(63, 65, 63);
+    color:white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;/* Muda o cursor para uma mãozinha ao passar sobre o botão */
+    animation: blinking 1s infinite;
+}
+/*Definindo a animação de pulsação*/
+@keyframes pulsar {
+    0% {
+        transform: scale(1); /*Tamanho original*/
+    }
+    50% {
+        transform: scale(1.1); /*Aumenta o tamanho*/
+    }
+    100% {
+        transform: scale(1); /*Retorna ao tamanho original*/
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        GL ARTLIV
+    </header>
+    <h2>Conheça nossas peças</h2>
+    <ul>
+        <li onclick="carregarPeca('Brincos')">BRINCOS</li>
+        <li onclick="carregarPeca('Anéis')">ANÉIS</li>
+        <li onclick="carregarPeca('Colares')">COLARES</li>
+        <li onclick="carregarPeca('Pingentes')">PINGENTES</li>
+        <li onclick="carregarPeca('Pulseiras')">PULSEIRAS</li>
+        <li onclick="carregarPeca('Relógio')">RELÓGIOS</li>
+    </ul>
+
+    <div id="detalhes"></div>
+    <footer>
+        <a href="https://www.instagram.com/gl.artliv?igsh=MWp4N3E5enNsNW1oaQ==">Instagram</a>
+    </footer>
+    <script>
+        //Função assíncrona para carregar detalhes do curso
+        //Declara uma função assíncrona chamada "carregarCurso" que recebe cada curso
+async function carregarPeca(peca){
+    try{
+        document.getElementById("detalhes").innerHTML = "Carregando...";
+        //Faz uma requisição para obter o arquivo JSON correspondente ao curso
+        await new Promise(resolve => setTimeout(resolve, 2000));    
+        let mensagens = {
+            "Brincos": "Brincos delicados e elegantes, perfeitos para qualquer ocasião. Feitos com materiais de alta qualidade para garantir durabilidade e conforto.",
+            "Anéis": "Anéis sofisticados que combinam design moderno com um toque clássico. Disponíveis em várias opções de tamanhos e estilos para atender ao seu gosto.",
+            "Colares": "Colares deslumbrantes que realçam sua beleza natural. Com uma variedade de designs, desde os mais simples até os mais elaborados.",
+            "Pingentes": "Pingentes únicos que adicionam um toque especial ao seu visual. Feitos com atenção aos detalhes para garantir um acabamento impecável.",
+            "Pulseiras": "Pulseiras versáteis que podem ser usadas sozinhas ou em conjunto com outras peças. Confortáveis e estilosas, perfeitas para o dia a dia.",
+            "Relógio": "Relógios elegantes que combinam funcionalidade com estilo. Perfeitos para quem valoriza pontualidade sem abrir mão da moda."
+        };
+
+        document.getElementById("detalhes").innerHTML = mensagens[peca];
+    }
+
+    catch(error){
+        console.error("Erro ao carregar detalhes das peças:", error);
+        document.getElementById("detalhes").innerHTML = "Erro ao carregar detalhes das peças.";
+    }
+}
+    </script>
+</body>
+</html>
