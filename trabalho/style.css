@@ -1,71 +1,140 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');
+
+@font-face {
+    /*Usar o site dafont.com para baixar a fonte e depois extrair*/
+    font-family: 'escrita';
+    src: url('fonts/Deuxieme_Rang_Original.otf') format(truetype);
+    font-weight: normal;
+    font-style: normal;}
+
+:root {
+    --cor0: #D8E5F8;
+    --cor1: #B2C7E6;
+    --cor2: #8DA6DE;
+    --cor3: #4C7AC8;
+    --cor4: #3E5189;
+    --cor5: #28407A;
+    --cor6: #25325C;
+    --cor7: #D9C9BA;
+    --cor8: #A78C72; 
+    --cor9: #78614C;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Playwrite VN", serif;
+}
+
 body {
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(71, 68, 68);
+     font-family:Georgia, 'Times New Roman', Times, serif;
+    background-image: url(./img/pf1.jpg);    
     margin: 50px; /* Adiciona uma margem de 50 pixels ao redor do corpo da página */
-    margin-left: 550px;
-    margin-top: 200px;
+    margin-left: 200px;
     padding: auto;
-    display: flex; * Utiliza o Flexbox para centralizar o conteúdo */
-    justify-content: center;
-    unicode-bidi: isolate;
+    justify-content: center;/*não muda nada no código*/
+    unicode-bidi: isolate;/*não muda nada no código*/
 }
 
-header {
-    margin-top: -100px;
+main {
+    min-height: 150px;
     text-align: center;
-    font-size: 40px;
-    color: white;
-    font-weight: bold;
+    padding-top: 40px;
 }
 
-h1 {
-    color: white;
+header > h1 {
+    color: rgb(6, 6, 6);
+    font-family: 'escrita';
+    font-size: 5em;
+    font-weight: normal;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.266);
+    padding-top: -50px;
+    font-weight: bold;
+    height: 40px;
+    margin-top: -30px;
+}
+
+h2 {
+   font-family: 'escrita';
+   font-size: 40px;
+   text-align: center;
+   margin-top: 20px;
 }
 
 p {
-    color: rgb(12, 12, 12);
     font-size: 25px;
-    font-weight: bold;
 }
 
-input {
-    color: black;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 10px;
+#aliancas {
+    width: 100px;
+    height: 100px;
+    margin-left: 400px;
+    margin-top: -1000px;
+}
+
+#mulher {
+    border: 10px solid black;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 500px;
+    height: 300px;
+}
+
+.ela {
+
 }
 
 .container {
     text-align: center;
-    background-color:rgb(134, 127, 127);
-    padding: 30px; /* Adiciona um preenchimento de 30 pixels ao redor do conteúdo do container */
+    color: rgb(204, 157, 166);
+    background-color:black;
+    position: absolute;
+    left: 850px;
+    margin-left: 20px;
+    margin-top: -300px;
+    width: 400px;
+    padding: 20px; /* Adiciona um preenchimento de 20 pixels ao redor do conteúdo do container */
     border-radius: 10px; /* Arredonda os cantos do container */
     display: block;
     box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3); /* Sombra */
-    
 }
 
-button {
-    background-color: rgb(63, 65, 63);
-    color:white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
+input {
     font-weight: bold;
-    cursor: pointer;/* Muda o cursor para uma mãozinha ao passar sobre o botão */
-    animation: blinking 1s infinite;
+    font-size: 15px;
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center; 
+    float: none;
+    margin-left: 5px; 
 }
-/*Definindo a animação de pulsação*/
-@keyframes pulsar {
-    0% {
-        transform: scale(1); /*Tamanho original*/
-    }
-    50% {
-        transform: scale(1.1); /*Aumenta o tamanho*/
-    }
-    100% {
-        transform: scale(1); /*Retorna ao tamanho original*/
-    }
 
+#botao {
+    background-color: rgb(204, 157, 166);
+    color: black;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center; 
+    float: none;
+    margin-left: 5px;
 }
+
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    height: 90px;
+    padding: 20px 110px 0px 110px;
+    width: 1100px;
+}
+
+#insta {
+    width: 30px;
+    height: 30px;
+}
+
