@@ -8,21 +8,35 @@
 </head>
 <body>
     <header>
-        GL ARTLIV
+        <h1>Brilho no olhar</h1>
+        <img src="img/aliancas.png" alt="Alianças" id="aliancas">
+        <h2>Conheça nossas peças e se encante em cada detalhe.</h2>
     </header>
-    <h2>Conheça nossas peças</h2>
-    <ul>
+    <!--<ul>
         <li onclick="carregarPeca('Brincos')">BRINCOS</li>
         <li onclick="carregarPeca('Anéis')">ANÉIS</li>
         <li onclick="carregarPeca('Colares')">COLARES</li>
         <li onclick="carregarPeca('Pingentes')">PINGENTES</li>
         <li onclick="carregarPeca('Pulseiras')">PULSEIRAS</li>
         <li onclick="carregarPeca('Relógio')">RELÓGIOS</li>
-    </ul>
+    </ul>-->
+
+    <div class="carrosselAneis">
+        <button class="prev"><</button><!--prev = anterior-->
+        <div class="imagens">
+            <img src="img/aneis2.jpg" alt="Anéis">
+            <img src="img/aneis1.jpg" alt="Anéis">
+            <img src="img/aneis3.jpg" alt="Anéis">
+        </div>
+        <button class="next">></button><!--next = próximo-->
+    </div>
+   
 
     <div id="detalhes"></div>
     <footer>
-        <a href="https://www.instagram.com/gl.artliv?igsh=MWp4N3E5enNsNW1oaQ==">Instagram</a>
+        &COPY;2025 GL artLiv. Todos os direitos reservados.<br><br>
+        <a href="https://www.instagram.com/gl.artliv?igsh=MWp4N3E5enNsNW1oaQ==">
+            <img src="img/faviconInstagram.ico" alt="Instagram"></a>
     </footer>
     <script>
         //Função assíncrona para carregar detalhes do curso
