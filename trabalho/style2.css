@@ -1,4 +1,90 @@
-h2 {
-    color: rgb(255, 255, 0);
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');
+
+@font-face {
+    /*Usar o site dafont.com para baixar a fonte e depois extrair*/
+    font-family: 'escrita';
+    src: url('fonts/Deuxieme_Rang_Original.otf') format(truetype);
+    font-weight: normal;
+    font-style: normal;}
+
+:root {
+    --cor0: #D8E5F8;
+    --cor1: #B2C7E6;
+    --cor2: #8DA6DE;
+    --cor3: #4C7AC8;
+    --cor4: #3E5189;
+    --cor5: #28407A;
+    --cor6: #25325C;
+    --cor7: #D9C9BA;
+    --cor8: #A78C72; 
+    --cor9: #78614C;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Playwrite VN", serif;
 }
 
+body {
+    background-image: url(./img/pf1.jpg);
+}
+
+header > h1 {
+    color: rgb(6, 6, 6);
+    font-family: 'escrita';
+    font-size: 5em;
+    font-weight: normal;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.266);
+    padding-top: -50px;
+    font-weight: bold;
+    height: 40px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+h2 {
+   font-family: 'escrita';
+   font-size: 40px;
+   text-align: center;
+   margin-top: 20px;
+}
+
+#aliancas {
+    width: 100px;
+    height: 100px;
+    margin-left: 400px;
+    margin-top: -1000px;
+}
+
+.carrosselAneis {
+    position: relative;
+    width: 300px; /*Largura do carrossel*/
+    height: 300px; /*Altura do carrossel*/
+    overflow: hidden; /*Esconde o conteúdo que ultrapassa os limites*/ 
+    margin: auto; /*Centraliza o carrossel 
+    horizontalmente*/
+    border: 12px solid rgb(78, 12, 12); /*Borda ao redor do carrossel*/
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 560px;
+}
+
+.imagens {
+    gap: 8px; /*espeço entre as imagens*/
+    display: flex; /*Usa o modelo de layout flexível para alinhar as imagens horizontalmente*/
+    transition: transform 4.5s ease-in-out; /*Aplica uma transição suave quando o carrossel é movido*/    
+}
+
+.imagens img {
+    width: 450px; /*Define a largura das imagens para 600px*/
+    height: 300px; /*Define a altura das imagens para 300px*/
+    object-fit: cover; /*Faz com que as imagens preencham o espaço sem distorcer, cortando parte delas se necessário*/
+}
+
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    padding: 20px 110px 0px 110px;
+}
