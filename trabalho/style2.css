@@ -27,6 +27,10 @@
 
 body {
     background-image: url(./img/pf1.jpg);
+    font-size:20px;
+
+    text-align: center;
+
 }
 
 header > h1 {
@@ -49,28 +53,53 @@ h2 {
    margin-top: 20px;
 }
 
+li {
+    list-style-type: none;
+    
+}
+
+
 #aliancas {
     width: 100px;
     height: 100px;
-    margin-left: 400px;
+    margin-left: 600px;
     margin-top: -1000px;
+    
+    
 }
 
-.carrosselAneis {
-    position: relative;
-    width: 300px; /*Largura do carrossel*/
-    height: 300px; /*Altura do carrossel*/
-    overflow: hidden; /*Esconde o conteúdo que ultrapassa os limites*/ 
-    margin: auto; /*Centraliza o carrossel 
-    horizontalmente*/
-    border: 12px solid rgb(78, 12, 12); /*Borda ao redor do carrossel*/
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-left: 560px;
+#anel {
+    width: 230px;
+    height: 230px;
+    border: 10px solid black
+}
+
+#brinco {
+    width: 230px;
+    height: 230px;
+    border: 10px solid black
+}
+
+#colar {
+    width: 230px;
+    height: 230px;
+    border: 10px solid black
+}
+
+#pulseira {
+    width: 230px;
+    height: 230px;
+    border: 10px solid black
+}
+
+#relogio {
+    width: 230px;
+    height: 230px;
+    border: 10px solid black
 }
 
 .imagens {
-    gap: 8px; /*espeço entre as imagens*/
+    gap: 8px; /*espaço entre as imagens*/
     display: flex; /*Usa o modelo de layout flexível para alinhar as imagens horizontalmente*/
     transition: transform 4.5s ease-in-out; /*Aplica uma transição suave quando o carrossel é movido*/    
 }
@@ -85,6 +114,11 @@ footer {
     text-align: center;
     background-color: black;
     color: white;
-    margin-top: 10px;
-    padding: 20px 110px 0px 110px;
+    margin-top: 30px;
+    padding: 20px 110px 10px 110px;
+}
+.sec1 {
+    display:flex; justify-content: center; gap:30px;
+    width: 100%;
+
 }
