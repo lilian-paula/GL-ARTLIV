@@ -1,140 +1,64 @@
-@charset "UTF-8";
-
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');
-
-@font-face {
-    /*Usar o site dafont.com para baixar a fonte e depois extrair*/
-    font-family: 'escrita';
-    src: url('fonts/Deuxieme_Rang_Original.otf') format(truetype);
-    font-weight: normal;
-    font-style: normal;}
-
-:root {
-    --cor0: #D8E5F8;
-    --cor1: #B2C7E6;
-    --cor2: #8DA6DE;
-    --cor3: #4C7AC8;
-    --cor4: #3E5189;
-    --cor5: #28407A;
-    --cor6: #25325C;
-    --cor7: #D9C9BA;
-    --cor8: #A78C72; 
-    --cor9: #78614C;
-
-    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
-    --fonte-destaque: "Playwrite VN", serif;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <h1>Brilho no olhar</h1>
+        <img src="img/aliancas.png" alt="Alianças" id="aliancas">
+        <h2>Veja as principais tendências e escolha a sua...</h2>
+        
+    </header>
+    
+    <div class="ela">
+        <img src="img/mulher1.png" alt="Mulher" id="mulher">
+        <section>
+            <div class="container">
+            <h1>LOGIN</h1>
+            <p id="mensagem">Digite usuário e senha.</p>
+            <input type="text" id="nome" placeholder="Usuário"><br><br>
+            <input type="password" id="senha" placeholder="Senha"><br><br>
+            <button onclick="verificarPalavra()" id="botao">Verificar</button>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &COPY;2025 Brilho no olhar. Todos os direitos reservados.<br><br>
+        <a href="https://www.instagram.com/gl.artliv?igsh=MWp4N3E5enNsNW1oaQ==">
+            <img src="img/faviconInstagram.ico" alt="Instagram" id="insta"></a>
+    </footer>
+    
+    <script>
+    function verificarPalavra() {
+    const nomes = [{nome:"Lilian", senha:123}, {nome:"Gabriela", senha:1234}, {nome:"André", senha:12345} ];
+    const usuario  = document.getElementById("nome").value;
+    const password = document.getElementById("senha").value;
+    const mensagem = document.getElementById("mensagem");
+    const Original = "Digite usuário e senha.";
+    let encontrado = false;
+    for( let  i=0;  i < nomes.length;  i++){
+        if(usuario == nomes[i].nome && password == nomes[i].senha ){
+            encontrado = true;
+            setTimeout(() => {
+         mensagem.innerHTML = "Redirecionando...";
+        window.location.href ="pagina2.html";
+    },3000);
 }
-
-body {
-     font-family:Georgia, 'Times New Roman', Times, serif;
-    background-image: url(./img/pf1.jpg);    
-    margin: 50px; /* Adiciona uma margem de 50 pixels ao redor do corpo da página */
-    margin-left: 200px;
-    padding: auto;
-    justify-content: center;/*não muda nada no código*/
-    unicode-bidi: isolate;/*não muda nada no código*/
-}
-
-main {
-    min-height: 150px;
-    text-align: center;
-    padding-top: 40px;
-}
-
-header > h1 {
-    color: rgb(6, 6, 6);
-    font-family: 'escrita';
-    font-size: 5em;
-    font-weight: normal;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.266);
-    padding-top: -50px;
-    font-weight: bold;
-    height: 40px;
-    margin-top: -30px;
-}
-
-h2 {
-   font-family: 'escrita';
-   font-size: 40px;
-   text-align: center;
-   margin-top: 20px;
-}
-
-p {
-    font-size: 25px;
-}
-
-#aliancas {
-    width: 100px;
-    height: 100px;
-    margin-left: 400px;
-    margin-top: -1000px;
-}
-
-#mulher {
-    border: 10px solid black;
-    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3); /* Sombra */
-    width: 500px;
-    height: 300px;
-}
-
-.ela {
-
-}
-
-.container {
-    text-align: center;
-    color: rgb(204, 157, 166);
-    background-color:black;
-    position: absolute;
-    left: 850px;
-    margin-left: 20px;
-    margin-top: -300px;
-    width: 400px;
-    padding: 20px; /* Adiciona um preenchimento de 20 pixels ao redor do conteúdo do container */
-    border-radius: 10px; /* Arredonda os cantos do container */
-    display: block;
-    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3); /* Sombra */
-}
-
-input {
-    font-weight: bold;
-    font-size: 15px;
-    height: 30px;
-    width: 300px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    text-align: center; 
-    float: none;
-    margin-left: 5px; 
-}
-
-#botao {
-    background-color: rgb(204, 157, 166);
-    color: black;
-    font-weight: bold;
-    height: 30px;
-    width: 100px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center; 
-    float: none;
-    margin-left: 5px;
-}
-
-footer {
-    text-align: center;
-    background-color: black;
-    color: white;
-    margin-top: 20px;
-    height: 90px;
-    padding: 20px 110px 0px 110px;
-    width: 1100px;
-}
-
-#insta {
-    width: 30px;
-    height: 30px;
-}
-
+    }
+    if(!encontrado){
+        setTimeout(() => {
+        mensagem.innerHTML = "Login ou senha incorretos, tente novamente.";
+        //Limpa os campos logo ao clicar
+        document.getElementById("nome").value = "";
+        document.getElementById("senha").value = "";
+                },2000);
+            }
+        }
+    </script>
+   
+</body>
+</html>
