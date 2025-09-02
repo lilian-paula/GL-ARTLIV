@@ -3,66 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
     <header>
         <h1>Brilho no olhar</h1>
         <img src="img/aliancas.png" alt="Alianças" id="aliancas">
-        <h2>Conheça nossas peças e se encante em cada detalhe.</h2>
+        <h2>Veja as principais tendências e escolha a sua...</h2>
+        
     </header>
-    <!--<ul>
-        <li onclick="carregarPeca('Brincos')">BRINCOS</li>
-        <li onclick="carregarPeca('Anéis')">ANÉIS</li>
-        <li onclick="carregarPeca('Colares')">COLARES</li>
-        <li onclick="carregarPeca('Pingentes')">PINGENTES</li>
-        <li onclick="carregarPeca('Pulseiras')">PULSEIRAS</li>
-        <li onclick="carregarPeca('Relógio')">RELÓGIOS</li>
-    </ul>-->
-
-    <div class="carrosselAneis">
-        <button class="prev"><</button><!--prev = anterior-->
-        <div class="imagens">
-            <img src="img/aneis2.jpg" alt="Anéis">
-            <img src="img/aneis1.jpg" alt="Anéis">
-            <img src="img/aneis3.jpg" alt="Anéis">
-        </div>
-        <button class="next">></button><!--next = próximo-->
+    
+    <div class="ela">
+        <img src="img/mulher1.png" alt="Mulher" id="mulher">
+        <section>
+            <div class="container">
+            <h1>LOGIN</h1>
+            <p id="mensagem">Digite usuário e senha.</p>
+            <input type="text" id="nome" placeholder="Usuário"><br><br>
+            <input type="password" id="senha" placeholder="Senha"><br><br>
+            <button onclick="verificarPalavra()" id="botao">Verificar</button>
+            </div>
+        </section>
     </div>
-   
-
-    <div id="detalhes"></div>
     <footer>
-        &COPY;2025 GL artLiv. Todos os direitos reservados.<br><br>
+        &COPY;2025 Brilho no olhar. Todos os direitos reservados.<br><br>
         <a href="https://www.instagram.com/gl.artliv?igsh=MWp4N3E5enNsNW1oaQ==">
-            <img src="img/faviconInstagram.ico" alt="Instagram"></a>
+            <img src="img/faviconInstagram.ico" alt="Instagram" id="insta"></a>
     </footer>
+    
     <script>
-        //Função assíncrona para carregar detalhes do curso
-        //Declara uma função assíncrona chamada "carregarCurso" que recebe cada curso
-async function carregarPeca(peca){
-    try{
-        document.getElementById("detalhes").innerHTML = "Carregando...";
-        //Faz uma requisição para obter o arquivo JSON correspondente ao curso
-        await new Promise(resolve => setTimeout(resolve, 2000));    
-        let mensagens = {
-            "Brincos": "Brincos delicados e elegantes, perfeitos para qualquer ocasião. Feitos com materiais de alta qualidade para garantir durabilidade e conforto.",
-            "Anéis": "Anéis sofisticados que combinam design moderno com um toque clássico. Disponíveis em várias opções de tamanhos e estilos para atender ao seu gosto.",
-            "Colares": "Colares deslumbrantes que realçam sua beleza natural. Com uma variedade de designs, desde os mais simples até os mais elaborados.",
-            "Pingentes": "Pingentes únicos que adicionam um toque especial ao seu visual. Feitos com atenção aos detalhes para garantir um acabamento impecável.",
-            "Pulseiras": "Pulseiras versáteis que podem ser usadas sozinhas ou em conjunto com outras peças. Confortáveis e estilosas, perfeitas para o dia a dia.",
-            "Relógio": "Relógios elegantes que combinam funcionalidade com estilo. Perfeitos para quem valoriza pontualidade sem abrir mão da moda."
-        };
-
-        document.getElementById("detalhes").innerHTML = mensagens[peca];
-    }
-
-    catch(error){
-        console.error("Erro ao carregar detalhes das peças:", error);
-        document.getElementById("detalhes").innerHTML = "Erro ao carregar detalhes das peças.";
-    }
+    function verificarPalavra() {
+    const nomes = [{nome:"Lilian", senha:123}, {nome:"Gabriela", senha:1234}, {nome:"André", senha:12345} ];
+    const usuario  = document.getElementById("nome").value;
+    const password = document.getElementById("senha").value;
+    const mensagem = document.getElementById("mensagem");
+    const Original = "Digite usuário e senha.";
+    let encontrado = false;
+    for( let  i=0;  i < nomes.length;  i++){
+        if(usuario == nomes[i].nome && password == nomes[i].senha ){
+            encontrado = true;
+            setTimeout(() => {
+         mensagem.innerHTML = "Redirecionando...";
+        window.location.href ="pagina2.html";
+    },3000);
 }
+    }
+    if(!encontrado){
+        setTimeout(() => {
+        mensagem.innerHTML = "Login ou senha incorretos, tente novamente.";
+        //Limpa os campos logo ao clicar
+        document.getElementById("nome").value = "";
+        document.getElementById("senha").value = "";
+                },2000);
+            }
+        }
     </script>
+   
 </body>
 </html>
